@@ -5,8 +5,8 @@ const Projects = () => {
     <div className="section">
       <h2>Projects</h2>
       <div className="project">
-        <h3>Model projects</h3>
-        <p>Some of my mini AI-ML projects</p>
+        <h3>Tic Tac Toe App </h3>
+        <p>integrated the necessary game logic and rules</p>
       </div>
       <div className="project">
         <h3>Portfolio Website</h3>
