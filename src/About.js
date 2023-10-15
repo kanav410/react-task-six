@@ -1,14 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
+import "./styles.css";
+import About from "./About";
+import Projects from "./Projects";
+import Contact from "./Contact";
+import Navigation from "./Navigation";
 
-const About = () => {
+function App() {
+  const [page, setPage] = useState("home");
+
+  const renderPage = () => {
+    switch (page) {
+      case "about":
+        return <About />;
+      case "projects":
+        return <Projects />;
+      case "contact":
+        return <Contact />;
+      default:
+        return (
+          <div className="home">
+            <h2>Welcome to my Portfolio</h2>
+            <p>I'm Kanav Gupta, open to delve into my work and make connections!</p>
+          </div>
+        );
+    }
+  };
+
   return (
-    <div className="section">
-      <h2>About Me</h2>
-      <p>Motivated computer science student with strong programming, problem- solving, and app development skills.</p>
-        <p> Good exposure to Java, C, C++, and Python. Passionate about latest technologies, exploring AI and ML to solve complex problems.</p>
-        <p> Experienced in collaborative work and skilled in Android Studio for user-friendly app design. Committed to continuous learning and seeking opportunities for professional growth.</p>
+    <div className="App">
+      <Navigation setPage={setPage} />
+      <header className="App-header">
+        <h1>My Portfolio</h1>
+      </header>
+      <main>{renderPage()}</main>
     </div>
   );
-};
+}
 
-export default About;
+export default App;
